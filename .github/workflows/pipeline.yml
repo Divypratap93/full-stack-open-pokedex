@@ -15,5 +15,10 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm install
+      - name: install lint
+        run: |
+          npm install eslint @eslint/js --save-dev
+          npx eslint --init --yes # Use --yes to auto-generate a default config
+
       - name: Check style
         run: npm run eslint
